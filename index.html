@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="images/avt.jpg" class="navbar-logo">
+            <a class="nav-link" href="#top">DP</a>
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header class="bg-dark text-white text-center py-5 section" id="top">
+        <img src="images/avt.jpg" class="avatar" alt="Your Avatar">
+        <h1>Đặng Hoàng Đông Phương</h1>
+        <p>Fullstack Web Developer</p>
+    </header>
+    
+
+    <section class="container mt-5 section" id="about">
+        <h2>About Me</h2>
+        <p>Welcome to my portfolio! I'm a recent graduate with a passion for crafting digital experiences. As a full-stack web developer, I bring creativity and technical expertise together to build seamless and user-centric solutions.</p>
+    </section>
+
+    <section class="container mt-5 section" id="education">
+        <h2>Education</h2>
+        <p></p>
+    </section>
+
+    <section class="container mt-5 section" id="experience">
+        <h2>Work Experience</h2>
+        <p></p>
+    </section>
+
+    <section class="bg-light py-5 section" id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="row" id="projectContainer">
+                <template id="cardTemplate">
+                    <div class="col-md-3 mb-3">
+                        <div class="card">
+                            <img src="images/dummy-image-square.webp" class="card-img-top" alt="Project 1">
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                
+            </div>
+        </div>
+    </section>
+    <section class="container mt-5 section" id="contact">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Contact Me</h2>
+                <form id="contact-form" method="post" class="row">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Message" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center align-self-center">
+                        <button type="submit" class="btn btn-primary btn-block">Send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h2>Social media</h2>
+                <div class="container">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td><a href="#">Facebook</a></td>
+                                <td><a href="#">GitHub</a></td>
+                                <td><a href="#">LinkedIn</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Twitter</a></td>
+                                <td><a href="#">Instagram</a></td>
+                                <td><a href="#">Pinterest</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+    </section>
+    
+    
+    
+    
+    
+    
+    <footer class="text-center py-3">
+        <p>&copy; 2023 Đông Phương. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery (place at the end of the body) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
