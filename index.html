@@ -10,13 +10,20 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <!-- Icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+    integrity="sha256-c9vxcXyAG4paArQG3xk6DjyW/9aHxai2ef9RpMWO44A=" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="body">
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">
             <img src="images/avt.jpg" class="navbar-logo">
-            <a class="nav-link" href="#top">DP</a>
+            <a class="nav-link active" href="#hero">DP</a>
         </a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
@@ -38,29 +45,130 @@
             </ul>
         </div>
     </nav>
-    <header class="bg-dark text-white text-center py-5 section" id="top">
-        <img src="images/avt.jpg" class="avatar" alt="Your Avatar">
-        <h1>Đặng Hoàng Đông Phương</h1>
-        <p>Fullstack Web Developer</p>
-    </header>
+    <section class="bg-dark text-white text-center py-5 section" id="hero">
+        <div class="bg-text">
+            <h1>I am Đông Phương</h1>
+            <p>And I'm a web developer</p>
+        </div>
+    </section>
     
 
     <section class="container mt-5 section" id="about">
         <h2>About Me</h2>
-        <p>Welcome to my portfolio! I'm a recent graduate with a passion for crafting digital experiences. As a full-stack web developer, I bring creativity and technical expertise together to build seamless and user-centric solutions.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="images/avt.jpg" class="img-fluid">
+                </div>
+                <div class="col-lg-8 pt-4 pt-lg-0 content">
+                    <h3>Web App Developer</h3>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <ul>
+                          <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <strong id="fullname">Full Name:</strong>
+                            <span>Đặng Hoàng Đông Phương</span>
+                          </li>
+                          <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <strong id="birthday">Birthday:</strong>
+                            <span>27-09-2000</span>
+                          </li>
+                          <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <strong id="website">Website:</strong>
+                            <a href="https://dhdongphuong27.github.io/"">
+                              <span>dhdongphuong27.github.io</span></a
+                            >
+                          </li>
+                          <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <strong id="phone">Phone:</strong> <span>(+84) 522052709</span>
+                          </li>
+                          <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <strong id="email">Email:</strong> <span>dhdongphuong27@gmail.com</span>
+                          </li>
+                          <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <strong id="city">City:</strong>
+                            <span>Ho Chi Minh City, VietNam</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-lg-6">
+                        <strong id="career">Career Objective:</strong>
+                          <ul>
+                              <li>
+                                <i class="bi bi-chevron-right"></i>
+                                <span>Learn and improve web programming skills. </span>
+                              </li>
+                              <li>
+                                <i class="bi bi-chevron-right"></i>
+                                <span>Keep learning new technology.</span>
+                              </li>
+                              <li>
+                                <i class="bi bi-chevron-right"></i>
+                                <span><strong>Become senior developer in 5 years.</strong></span>
+                              </li>
+                          </ul>
+                       
+                      </div>
+                    </div>
+                    <div style="margin-top: 20px">
+                      <form
+                        method="get"
+                        action="images/CV.pdf"
+                        download="CV_for_Dev_Dang_Hoang_Dong_Phuong_(en)"
+                      >
+                        <button id="downloadCV" class="downloadBtn" type="submit">Download CV</button>
+                      </form>
+                      <button id="downloadPage" class="downloadBtn">Download this page as pdf</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
     </section>
 
-    <section class="container mt-5 section" id="education">
-        <h2>Education</h2>
-        <p></p>
+    <section class="mt-5 py-5 section bg-light" id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="flex-container">
+                <div class="main-timeline-2">
+                    <div class="timeline-2 right-2">
+                        <div class="card tl-card callout">
+                            <div class="card-header"><h5 class="text-info">Bachelor program: Software Engineering<span class="float-right">2018-Present</span></h5></div>
+                            <div class="card-body">
+                                <h6 class="card-title">Ton Duc Thang University</h6>
+                                <p class="card-text">GPA: 8.08/10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-timeline-2">
+                    <div class="timeline-2 right-2">
+                        <div class="card tl-card callout">
+                            <div class="card-header"><h5 class="text-info">4+1 master program: Computer Science<span class="float-right">2021-Present</span></h5></div>
+                            <div class="card-body">
+                                <h6 class="card-title">Ton Duc Thang University</h6>
+                                <p class="card-text">GPA: 7.7/10 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
     </section>
 
-    <section class="container mt-5 section" id="experience">
-        <h2>Work Experience</h2>
-        <p></p>
+    <section class="mt-5 section" id="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <p></p>
+        </div>
     </section>
 
-    <section class="bg-light py-5 section" id="projects">
+    <section class="mt-5 py-5 section" id="projects">
         <div class="container">
             <h2>Projects</h2>
             <div class="row" id="projectContainer">
@@ -103,22 +211,13 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <h2>Social media</h2>
+                <h2>Or via</h2>
                 <div class="container">
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr>
-                                <td><a href="#">Facebook</a></td>
-                                <td><a href="#">GitHub</a></td>
-                                <td><a href="#">LinkedIn</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">Twitter</a></td>
-                                <td><a href="#">Instagram</a></td>
-                                <td><a href="#">Pinterest</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <a href="https://www.facebook.com/dhdongphuong27/" target="_blank" class="fa fa-facebook"></a>
+                    <a href="https://github.com/dhdongphuong27" target="_blank" class="fa fa-github"></a>
+                    <a href="https://www.linkedin.com/in/dhdongphuong/" target="_blank" class="fa fa-linkedin"></a>
+                    <a href="#" target="_blank" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com/dhdongphuong/" target="_blank" class="fa fa-instagram"></a>
                 </div>
                 
                 
@@ -126,20 +225,24 @@
         </div>
         
     </section>
-    
-    
-    
-    
-    
+
     
     <footer class="text-center py-3">
-        <p>&copy; 2023 Đông Phương. All rights reserved.</p>
+        <div class="container">
+            <p>
+                Whatever i want, i can.
+            </p>
+            
+            © 2023 Đông Phương. All rights reserved.
+          </div>
     </footer>
 
     <!-- Bootstrap JS and jQuery (place at the end of the body) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
+</div>
 </body>
 </html>

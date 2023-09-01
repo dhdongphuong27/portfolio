@@ -1,3 +1,6 @@
+:root {
+    --info: #5bc0de;
+}
 .avatar {
     width: 100px;
     height: 100px;
@@ -6,10 +9,10 @@
 }
 /* Apply Poppins font to all non-header elements */
 body, p, input, textarea, button, .form-control {
-    font-family: "Poppins", sans-serif;
+    font-family: "Be Vietnam Pro", sans-serif;
 }
 body {
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
 /* Additional styling for your existing elements */
@@ -25,7 +28,7 @@ h2 {
 
 /* Optional: Change link colors on hover */
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #007bff;
+    color: var(--info);
 }
 
 .three-columns {
@@ -43,6 +46,8 @@ h2 {
 /* Adjust the padding on the left side of the navbar */
 .navbar.fixed-top {
     padding-left: 10%; /* Adjust as needed */
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .navbar-nav {
@@ -62,24 +67,60 @@ h2 {
     transition: background-color 0.3s;
 }
 
-
-
-
-
 /*Beautify */
 /* Header */
-header {
-    background-image: url('images/header-background.jpg');
+
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url("images/bg.jpg") top right no-repeat;
     background-size: cover;
-    background-position: center;
-    padding: 150px 0;
-    text-align: center;
+    position: relative;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #f8f9fa; /* Light gray background */
-}
+/* Position text in the middle of the page/image */
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .downloadBtn {
+    background-color: #3c6ae7;
+    border-radius: 50px;
+    border-width: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 -25px 18px -14px inset, #eef7ff 0 1px 2px,
+      #eef7ff 0 2px 4px, #eef7ff 0 4px 8px, #eef7ff 0 8px 16px,
+      #eef7ff 0 16px 32px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular, -apple-system, BlinkMacSystemFont, Roboto,
+      sans-serif;
+    line-height: 16px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 200ms;
+    margin-bottom: 10px;
+  }
+  
+  .downloadBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0 -25px 18px -14px inset, #0562b9 0 1px 2px,
+      #0562b9 0 2px 4px, #0562b9 0 4px 8px, #0562b9 0 8px 16px,
+      #0562b9 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  }
 
 
 
@@ -98,9 +139,6 @@ header {
     padding: 50px 0;
 }
 
-#projectContainer {
-    
-}
 
 /* Contact Section */
 #contact h2 {
@@ -121,12 +159,12 @@ footer {
 }
 /* Primary Color */
 .navbar-light .navbar-nav .nav-link {
-    color: #007BFF;
+    color: var(--info);
 }
 
 .btn-primary {
-    background-color: #007BFF;
-    border-color: #007BFF;
+    background-color: var(--info);
+    border-color: var(--info);
 }
 
 /* Secondary Color */
@@ -151,7 +189,133 @@ footer {
 }
 
 .nav-link.active {
-    background-color: #007bff;
+    background-color: var(--info);
     color: #fff !important;
-    border-color: #007bff;
+    border-color: var(--info);
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-2 {
+    position: relative;
+}
+  
+  /* The actual timeline (the vertical ruler) */
+.main-timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    border: 1px dashed DarkGrey;
+    background-color: none;
+    top: 0;
+    bottom: 0;
+    margin-left: -4px;
+}
+
+.timeline-2 {
+    position: relative;
+    background-color: inherit;
+    width: 80%;
+}
+
+.right-2 {
+    padding: 10px 0px 10px 20px;
+
+}
+.right-2::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 10px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+.right-2::after {
+    left: -14px;
+}
+  
+  /* The circles on the timeline */
+.timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #F0F2F5;
+    outline: 1px solid DarkGrey;
+    right: -8px;
+    background-color: DarkGrey;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.callout {
+    border: 1px solid var(--info);
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white !important;
+  }
+  
+  /* Github */
+  .fa-github {
+    background: #333;
+    color: white !important;
+  }
+
+  /* Linkedin */
+  .fa-linkedin {
+    background: #007bb5;
+    color: white !important;
+  }
+
+  .fa-twitter {
+    background: #55ACEE;
+    color: white !important;
+  }
+  
+  .fa-instagram{
+    background: #f09433; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    }
+
+ .content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer p {
+    font-size: 15px;
+    font-style: italic;
+    padding: 0;
+    margin: 20px 0 20px 0;
 }

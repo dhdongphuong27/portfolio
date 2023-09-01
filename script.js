@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const navLinks = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll(".section");
-    const contactLink = navLinks[navLinks.length - 1];
+    const lastItem = navLinks[navLinks.length - 1];
     function changeActiveLink() {
         sections.forEach((section, index) => {
             const bounding = section.getBoundingClientRect();
 
-            if (bounding.top <= navbarHeight+5 && bounding.bottom >= navbarHeight+5) {
+            if (bounding.top <= navbarHeight && bounding.bottom >= navbarHeight) {
                 navLinks.forEach(link => link.classList.remove("active"));
                 navLinks[index].classList.add("active");
             }
@@ -48,23 +48,34 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollPosition = window.scrollY;
         const pageHeight = document.body.scrollHeight - window.innerHeight;
 
-        if (scrollPosition === pageHeight) {
+        if (scrollPosition+5 >= pageHeight) {
             navLinks.forEach(link => link.classList.remove("active"));
-            contactLink.classList.add("active");
+            lastItem.classList.add("active");
         }
     }
 
     document.addEventListener("scroll", changeActiveLink);
+
+    const cardContainer = document.getElementById("projectContainer");
+    const cardTemplate = document.getElementById("cardTemplate");
+
+    for (i=0; i<4; i++){
+        const cardClone = document.importNode(cardTemplate.content, true);
+        cardClone.querySelector(".card-title").textContent = "Project number " + i;
+        cardClone.querySelector(".card-text").textContent = "Bla blo description";
+
+        cardContainer.appendChild(cardClone);
+    }
+    $('#downloadPage').click(function () {
+        domtoimage.toPng(document.querySelector('.body'))
+            .then(function (blob) {
+                var pdf = new jsPDF('l', 'pt', [$('.body').width(), $('.body').height()]);
+                pdf.addImage(blob, 'PNG', 0, 0, $('.body').width(), $('.body').height());
+                pdf.save("test.pdf");
+                that.options.api.optionsChanged();
+            });
+    });
 });
 
-const cardContainer = document.getElementById("projectContainer");
-const cardTemplate = document.getElementById("cardTemplate");
 
-for (i=0; i<6; i++){
-    const cardClone = document.importNode(cardTemplate.content, true);
-    cardClone.querySelector(".card-title").textContent = "Project number " + i;
-    cardClone.querySelector(".card-text").textContent = "Bla blo description";
-
-    cardContainer.appendChild(cardClone);
-}
 
